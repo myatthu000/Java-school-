@@ -47,7 +47,7 @@ public class ElectricBillCost {
         int unit3 = 0;
         int price3 = 0;
         if (remainingUnit > 0) {
-            unit3 = Math.min(remainingUnit, 100); // 101 မှ 200 အထိ ယူနစ် ၁၀၀ စာ
+            unit3 = Math.min(remainingUnit, 100); // 
             price3 = unit3 * 150;
             remainingUnit -= unit3;
             countedUnit += unit3;
@@ -57,7 +57,7 @@ public class ElectricBillCost {
         
         // Layer 4: Over 200 
         if (remainingUnit > 0) {
-            int priceExtra = remainingUnit * 150; // ပုံထဲမှာ နောက်ထပ် rate မပါလို့ လက်ရှိ ၁၅၀ နဲ့ပဲ ဆက်တွက်ထားပါတယ်
+            int priceExtra = remainingUnit * 150;
             countedUnit += remainingUnit;
             totalPrice += priceExtra;
             System.out.printf("%-3d %-12s %-6s %-6d %-10s\n", 4, ">200", "150K", remainingUnit, priceExtra + "K");

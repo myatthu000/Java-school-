@@ -2,12 +2,10 @@ package GUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JPanel;
-
 import java.awt.*;
 import javax.swing.*;
 
-public class LoginForm implements ActionListener{
+public class LoginForm1 implements ActionListener{
 
     JFrame frame;
     JButton loginBtn;
@@ -16,34 +14,48 @@ public class LoginForm implements ActionListener{
     JTextField emailField;
     JPasswordField passwordField;
     JPanel mypanel;
+    JPanel btnPanel;
+    JCheckBox showPassword;
 
-    LoginForm(){
+    LoginForm1(){
         frame = new JFrame("Login Form");
+
+        mypanel = new JPanel();
+        btnPanel = new JPanel();
+
+        mypanel.setBounds(50, 50, 400, 100);
+        btnPanel.setBounds(200, 200, 100, 30);
+        
         ELabel = new JLabel("Email");
         PLabel = new JLabel("Password");
         emailField = new JTextField();
         passwordField = new JPasswordField();
         loginBtn = new JButton("Login");
 
-        frame.setSize(500,300);
+        frame.setSize(500,1000);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.getContentPane().setBackground(Color.WHITE);
         frame.setLayout(null);
 
-        
-        ELabel.setBounds(50, 50, 80, 30);
-        frame.add(ELabel);
-        emailField.setBounds(150,50,260,30);
-        frame.add(emailField);
+        frame.add(mypanel);
+        frame.add(btnPanel);
+ 
 
-        PLabel.setBounds(50, 100, 80, 30);
-        frame.add(PLabel);
-        passwordField.setBounds(150, 100, 260, 30);
-        frame.add(passwordField);
-        
-        loginBtn.setBounds(150, 160, 100, 35);
-        frame.add(loginBtn);
+
+        mypanel.setLayout(new GridLayout(2,2,10,10));
+        mypanel.add(ELabel);
+        // emailField.setBounds(150,50,260,30);
+        mypanel.add(ELabel);
+        mypanel.add(emailField);
+
+        mypanel.add(PLabel);
+        mypanel.add(passwordField);
+
+        btnPanel.setLayout(new GridLayout(1,3,10,10));
+        btnPanel.add(loginBtn);
+
+
 
         loginBtn.addActionListener(this);
 
@@ -52,7 +64,7 @@ public class LoginForm implements ActionListener{
     
 
     public static void main(String[] args) {
-        new LoginForm();
+        new LoginForm1();
     }
 
     @Override
